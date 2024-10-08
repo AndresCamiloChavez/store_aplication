@@ -1,0 +1,45 @@
+<div class="block-content">
+  <app-app-bar></app-app-bar>
+  <div class="ng-star-inserted">
+    <div class="surface-section px-4 py-4 md:px-6 lg:px-">
+      <div class="text-900 font-medium text-4xl mb-4">Productos Populares</div>
+      <div class="grid -mt-3 -ml-3 -mr-3">
+        @for (product of data.products(); track $index) {
+        <div
+          [routerLink]="['/producto', product.id]"
+          class="col-12 md:col-6 lg:col-3 mb-3 lg:mb-0"
+        >
+          <div class="p-2">
+            <div class="relative" [routerLink]="['/producto', 32]">
+              <img
+                src="https://d1ih8jugeo2m5m.cloudfront.net/2024/08/ideas_para_tienda_de_ropa_infantil-1200x685.jpg"
+                class="w-full"
+              /><button
+                type="text"
+                pripple=""
+                class="p-ripple p-element p-link w-3rem h-3rem surface-0 hover:surface-200 border-circle shadow-2 inline-flex align-items-center justify-content-center absolute transition-colors transition-duration-300"
+                style="top: 1rem; right: 1rem"
+              >
+                <i class="pi pi-heart text-2xl text-500"></i
+                ><span class="p-ink"></span>
+              </button>
+            </div>
+            <div
+              class="flex align-items-center justify-content-between mt-3 mb-2"
+            >
+              <span class="text-900 font-medium text-xl">{{
+                product.nombre
+              }}</span
+              ><span class="text-900 text-xl ml-3">{{ "50000" | price }}</span>
+            </div>
+            <span class="text-400">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+              eum corrupti, cumque soluta enim magnam</span
+            >
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
